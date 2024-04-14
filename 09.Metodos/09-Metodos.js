@@ -40,7 +40,6 @@ function NombresLargos(array){
     // superen una longitud mayor o igual a 5  (FILTER)
     // Tu codigo:
     result = array.filter((elemnt) => elemnt.length > 5)
-
 }
 
 function filtaradoPorCategoria(array, categoria){
@@ -50,7 +49,6 @@ function filtaradoPorCategoria(array, categoria){
     // de las peliculas que sean de la categoria pedida.
     // Tu codigo:
     result = array.filter((elemnt) => elemnt.cateogria == categoria)
-
 }
 
 function examenIngreso(array){
@@ -61,7 +59,6 @@ function examenIngreso(array){
     // (inscripcion = true)
     // Tu codigo:
     result = array.filter((elemnt) => elemnt.nota >= 70 && element.inscripcion == true)
-
 }
 
 function nombreContiene(nombres, search) {
@@ -70,9 +67,7 @@ function nombreContiene(nombres, search) {
     // que incluyan lo pedido por 'search'. Ej: ['Leo','Agustina','Martina','Pedro','Manuel', 'Cristina'] & Search = 'tina'
     // deberia devolver => ['Agustina','Martina','Cristina']
     // Tu código aquí 👈
-
     result = array.filter((element)=>element.includes(search))
-
 }
 
 

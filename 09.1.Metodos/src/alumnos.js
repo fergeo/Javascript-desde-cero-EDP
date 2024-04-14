@@ -26,13 +26,74 @@ let addColumn = false; // Variable que debe cambiar según -> Si existe la 4 col
 
 // BOTON DATOS ALUMNO => Deberia devolver la tabla de alumnos con los datos personales de cada alumno (nombre, apellido, dni).
 const btnDate = () =>{
+    if(bodyTableAlumnos.rows.legth > 0) 
+        for( i = bodyTableAlumnos.rows.legth - 1 ; i > 0 ; i--)
+            bodyTableAlumnos.deleteRow(i);
 
+    alumnos.forEach((element) => {
+
+        newRow = bodyTableAlumnos.insertRow(0)
+
+        for( j = 0 ; j < 3 ; j++ ){
+            // Inserta una celda en la fila, en el índice 0
+            newCell = newRow.insertCell(j);
+
+            switch(j){
+                case 0:
+                    // Añade un nodo de texto a la celda
+                    newText = document.createTextNode(element.nombre)
+                    newCell.appendChild(newText)                        
+                break
+                case 1:
+                    newText = document.createTextNode(element.apellido)
+                    newCell.appendChild(newText)                     
+                break
+                case 2:
+                    newText = document.createTextNode(element.dni)
+                    newCell.appendChild(newText)                    
+                break                              
+            }
+        } 
+    });
 }
     
 
 // BOTON PROMEDIOS => Deberia devolver la tabla de alumnos con el promedio de cada alumno, este consta en 3 notas (examen1, examen2, examen3).
 const btnPromedios = () => {
+    deleteColumn()
 
+    alumnos.forEach((element) => {
+
+        newRow = bodyTableAlumnos.insertRow(0)
+
+        for( j = 0 ; j < 4 ; j++ ){
+            // Inserta una celda en la fila, en el índice 0
+            newCell = newRow.insertCell(j);
+
+            switch(j){
+                case 0:
+                    // Añade un nodo de texto a la celda
+                    newText = document.createTextNode(element.nombre)
+                    newCell.appendChild(newText)                        
+                break
+                case 1:
+                    newText = document.createTextNode(element.apellido)
+                    newCell.appendChild(newText)                     
+                break
+                case 2:
+                    newText = document.createTextNode(element.dni)
+                    newCell.appendChild(newText)                    
+                break     
+                case 3:
+
+                    newCell.setAttribute("id", "delete")
+
+                    newText = document.createTextNode(Math.round((element.examen1 + element.examen2 + element.examen3)/3))
+                    newCell.appendChild(newText)                    
+                break  
+            }
+        } 
+    });
 }
 
 
@@ -41,6 +102,50 @@ const btnPromedios = () => {
 // *la columna se deberá eliminar si se selecciona otro boton
 const btnAsistencia = () => {
 
+    deleteColumn()
+
+    alumnos.forEach((element) => {
+
+        newRow = bodyTableAlumnos.insertRow(0)
+
+        for( j = 0 ; j < 5 ; j++ ){
+            // Inserta una celda en la fila, en el índice 0
+            newCell = newRow.insertCell(j);
+
+            switch(j){
+                case 0:
+                    // Añade un nodo de texto a la celda
+                    newText = document.createTextNode(element.nombre)
+                    newCell.appendChild(newText)                        
+                break
+                case 1:
+                    newText = document.createTextNode(element.apellido)
+                    newCell.appendChild(newText)                     
+                break
+                case 2:
+                    newText = document.createTextNode(element.dni)
+                    newCell.appendChild(newText)                    
+                break     
+                //case 3:
+                //    newText = document.createTextNode(Math.round((element.examen1 + element.examen2 + element.examen3)/3))
+                //    newCell.appendChild(newText)                    
+                //break  
+                case 3:
+                    newCell.setAttribute("id", "delete")
+
+                    newText = document.createTextNode(element.asistencias + "/24")
+                    newCell.appendChild(newText)                    
+                break  
+                case 4:
+                    newCell.setAttribute("id", "delete")
+
+                    newText = document.createTextNode(Math.round((element.asistencias * 100) / 24))
+                    newCell.appendChild(newText)                    
+                break                  
+
+            }
+        } 
+    });
 } 
 
 
@@ -48,12 +153,69 @@ const btnAsistencia = () => {
 // Un promedio ≥ 70 y un porcentaje de asistencia ≥ 70
 const btnAprobados = () => {
 
+    alumnos.forEach((element) => {
+
+        if( ( Math.round((element.examen1 + element.examen2 + element.examen3)/3) >= 70 ) && ( Math.round((element.asistencias * 100) / 24) >= 70 ) ){
+            newRow = bodyTableAlumnos.insertRow(0)
+
+            for( j = 0 ; j < 3 ; j++ ){
+                // Inserta una celda en la fila, en el índice 0
+                newCell = newRow.insertCell(j);
+    
+                switch(j){
+                    case 0:
+                        // Añade un nodo de texto a la celda
+                        newText = document.createTextNode(element.nombre)
+                        newCell.appendChild(newText)                        
+                    break
+                    case 1:
+                        newText = document.createTextNode(element.apellido)
+                        newCell.appendChild(newText)                     
+                    break
+                    case 2:
+                        newText = document.createTextNode(element.dni)
+                        newCell.appendChild(newText)                    
+                    break                              
+                }
+            } 
+        }
+
+    })
+
 }
 
 
 // Deberia devolver la tabla de alumnos con aquellos que no aprobaron el cursado.
 const btnReprobados = () => {
 
+    alumnos.forEach((element) => {
+
+        if( ( Math.round((element.examen1 + element.examen2 + element.examen3)/3) < 70 ) && ( Math.round((element.asistencias * 100) / 24) < 70 ) ){
+            newRow = bodyTableAlumnos.insertRow(0)
+
+            for( j = 0 ; j < 3 ; j++ ){
+                // Inserta una celda en la fila, en el índice 0
+                newCell = newRow.insertCell(j);
+    
+                switch(j){
+                    case 0:
+                        // Añade un nodo de texto a la celda
+                        newText = document.createTextNode(element.nombre)
+                        newCell.appendChild(newText)                        
+                    break
+                    case 1:
+                        newText = document.createTextNode(element.apellido)
+                        newCell.appendChild(newText)                     
+                    break
+                    case 2:
+                        newText = document.createTextNode(element.dni)
+                        newCell.appendChild(newText)                    
+                    break                              
+                }
+            } 
+        }
+
+    })    
 }
 
 
