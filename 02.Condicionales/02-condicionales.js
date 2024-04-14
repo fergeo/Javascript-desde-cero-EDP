@@ -3,6 +3,22 @@ function verificarNumero(numero){
     // "Es negativo" si es menor que cero y "Es cero" si es igual a cero.
     // Tu código 👇:
 
+    if(numero > 0)
+    {
+        document.write("Es positivo.")
+        console.log(("Es positivo."))
+    }
+    else if(numero < 0)
+    {
+        document.write("Es negativo.")
+        console.log(("Es negativo."))
+    }
+    if(numero == 0)
+    {
+        document.write("Es igual a cero.")
+        console.log(("Es es igual a cero."))
+    }
+
 }
 
 

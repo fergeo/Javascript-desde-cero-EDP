@@ -5,6 +5,24 @@
 // caso contrario se le indica que no puede inscribirse y la razón.
 // Tu codigo 👇:
 
+let edad
+
+do{
+        edad = prompt("Por favor ingrese su edad: ")
+        if(edad < 18)
+        {
+                console.log("Imposibilidad de incribirse. La edad debe ser mayor o igual a 18 años.")                
+                document.write("Imposibilidad de incribirse. La edad debe ser mayor o igual a 18 años.")                       
+        }
+        else    
+        {
+                console.log("Continue con su inscripción.")    
+                document.write("Continue con su inscripcion.")            
+        }
+
+}
+while( edad < 18 )
+
 
 //_________________________________________
 
@@ -18,6 +36,34 @@
 // Calificación menor a 60: "Insuficiente"
 // Tu codigo 👇:
 
+let calific
+
+do{
+        calific = prompt("Por favor ingrese la calificación: ")
+
+        if(calific >= 90){
+                console.log("Exclente")
+                document.write("Exclente")                
+        }
+        else if(calific >= 70 && calific <= 89){
+                console.log("Bueno")
+                document.write("Bueno")
+        }
+        else if(calific >= 60 && calific <= 69){
+                console.log("Suficioente")
+                document.write("Suficioente")                
+        }
+        else if(calific >= 0 && calific < 60){
+                console.log("Insuficiente")
+                document.write("Insuficiente")
+        }
+        else if(calific < 0 && calific >= 101){
+                console.log("Calificación no valida.")
+                document.write("Calificación no valida.")                
+        }
+}
+while( calific >= 0 && calific <= 100)
+
 
 //_________________________________________
 
@@ -27,6 +73,29 @@
 // Escribe un programa que solicite al usuario ingresar un número entero y luego determine si es par o impar.
 // Tu codigo 👇:
 
+let entero
+
+do
+{
+
+        entero = prompt("Ingrese un numero:")
+
+        if (!isInteger(entero)){
+                console.log("Debe ingresar un número entero.")
+                document.write("Debe ingresar un número entero.")                
+        }
+        else if( entero%2 == 0 ){
+                console.log("El número es par.")
+                document.write("El número es par.")
+        }
+        else if( entero%2 != 0 ){
+                console.log("El número es impar.")
+                document.write("El número es impar.")
+        }
+
+
+}
+while( !isInteger(entero) )
 
 //_________________________________________
 
@@ -37,6 +106,40 @@
 // Por ejemplo, si el usuario ingresa 1, el programa debe imprimir "Lunes".
 // Tu codigo 👇:
 
+let dia
+
+do
+{
+        dia = prompt("Ingrese un numero: ")
+        switch(dia)
+        {
+                case 1:
+                        console.log("Lunes")
+                break
+                case 2:
+                        console.log("Martes")
+                break
+                case 3:
+                        console.log("Miercoles")
+                break
+                case 4:
+                        console.log("Jueves")
+                break
+                case 5:
+                        console.log("Viernes")
+                break
+                case 6:
+                        console.log("Sabado")
+                break
+                case 7:
+                        console.log("Domingo")
+                break   
+                default:
+                        console.log("Debe ingresar nuevamente el numero de dia.")                                
+        }        
+                                                                                                             
+}
+while( dia < 1 || dia > 7 )
 
 //_________________________________________
 
@@ -48,6 +151,24 @@
 // el programa debe imprimir un mensaje que indique que el empleado es elegible para una bonificación del 10% de su salario actual.
 // Tu codigo 👇:
 
+let antigüedad, salario
+
+do
+{
+
+        antigüedad = prompt("Ingrese la antiguedad: ")
+        salario = prompt("Ingrese su salrio: ")
+
+        if(  antiguedad < 5  && salario >= 500 )
+                console.log("No accedio a una bonificación.")
+        else
+        {
+                let bonificacion = (salario*10)/100
+                console.log("Para el sueldo " + salario + " tendra una bonificacion de " + bonificacion)
+        }
+}
+while(  antiguedad < 5  && salario >= 500 )
+
 
 //_________________________________________
 
@@ -58,6 +179,21 @@
 // Entre 18 y 65 años: "Adulto"
 // Mayor de 65 años: "Senior"
 // Tu codigo 👇:
+
+do
+{
+        edad = prompt("Ingrese la edad: ")
+
+        if( edad < 18 )
+                console.log("Menor de edad.")
+        else if(edad >= 18 && edad < 65)
+                console.log("Adulto")     
+        else if(edad >= 65)
+                console.log("Senior")    
+        else
+                console.log("Ingrese un valor mayor que cero.")            
+}
+while(edad > 0)
 
 
 //_________________________________________

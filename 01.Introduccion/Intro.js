@@ -19,6 +19,8 @@
 // Un estudiante obtuvo calificaciones de 8, 7 y 9 en tres exámenes respectivamente. ¿Cuál es el promedio de sus calificaciones?
 // Tu codigo 👇:
 
+document.write("Promedio de los examene: ")
+document.write( (8+7+9) /3 )
 
 //_________________________________________
 
@@ -27,6 +29,7 @@
 // Juan quiere saber cuántas letras tiene su nombre. ¿Cuál es la longitud del nombre "Juan"?
 // Tu codigo 👇:
 
+document.write("La cantidad del nombre Juan es " + "Juan".length)
 
 //_________________________________________
 
@@ -35,6 +38,7 @@
 // Si una distancia se mide en metros y se desea conocer su equivalencia en pies, donde 1 metro equivale a 3.281 pies, ¿cuántos pies son 10 metros?
 // Tu codigo 👇:
 
+document.write("10 mentros en pies es " + 3.281 * 10)
 
 //_________________________________________
 
@@ -43,6 +47,7 @@
 // Un producto tiene un precio original de $100. Si hay un descuento del 20%, ¿cuál es el precio final del producto después del descuento?
 // Tu codigo 👇:
 
+document.write("El precio final es: " + (100 - ((100*20)/100)) )
 
 //_________________________________________
 
@@ -55,6 +60,10 @@
 // Ejemplo: Lionel Messi -> Bienvenido Lionel Messi 
 // Tu codigo 👇:
 
+let nombre = prompt("Ingrese su mobre: ")
+let apellido = prompt("Ingrese su apellido: ")
+
+console.log( "Bienvenido " + nombre + " " + apellido)
 
 //_________________________________________
 
